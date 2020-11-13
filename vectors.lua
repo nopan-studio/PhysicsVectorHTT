@@ -50,7 +50,7 @@ return {
         name = "d4",
         length = 4, 
         angle = 30, 
-        direction = "SoE"
+        direction = "SoW"
     },
 
     {
@@ -59,22 +59,6 @@ return {
         angle = 70,
         direction = "NoE"
     },
-    {
-        name = "d6",
-        length = 5, 
-        angle = 0,
-        direction = "E"
-    },
-
-    {
-        name = "d7",
-        length = 8, 
-        angle = 20,
-        direction = "WoN"
-    },
-
-   
-
 
     -- dont remove. this is your resultant vector.
     {

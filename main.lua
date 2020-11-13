@@ -68,39 +68,38 @@ function love.load()
                 vector.direction = "W"
                 vector.angle = 0
 
-            elseif vector.x > vectors[1].x and vector.y > vectors[1].y then
-                vector.direction = {}
-                vector.direction[1] = "NoW"
-                vector.direction[2] = "WoN"
-                vector.angle = {}
-                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi
-
-                vector.angle[2] =  math.abs(vector.angle[1] - 90) + 1
-
-            elseif vector.x > vectors[1].x and vector.y < vectors[1].y then
-                vector.direction = {}
-                vector.direction[1] = "SoW"
-                vector.direction[2] = "WoS"
-                vector.angle = {}
-                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi
-                vector.angle[2] =  math.abs(vector.angle[1] - 90) + 1
-            
-            elseif vector.x < vectors[1].x and vector.y > vectors[1].y then
-                vector.direction = {}
-                vector.direction[1] = "NoE"
-                vector.direction[2] = "EoN"
-                vector.angle = {}
-                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi
-                vector.angle[2] =  math.abs(vector.angle[1] - 90) + 1
-
             elseif vector.x < vectors[1].x and vector.y < vectors[1].y then
                 vector.direction = {}
-                vector.direction[1] = "SoE"
-                vector.direction[2] = "EoS"
+                vector.direction[1] = "WoN"
+                vector.direction[2] = "NoW"
                 vector.angle = {}
-                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi
-                vector.angle[2] = math.abs(vector.angle[1] - 90) + 1
-                   
+                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * (180 / pi)
+                vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
+
+            elseif vector.x < vectors[1].x and vector.y > vectors[1].y then
+                vector.direction = {}
+                vector.direction[1] = "WoS"
+                vector.direction[2] = "SoW"
+                vector.angle = {}
+                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * (180 / pi)
+                vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
+            
+            elseif vector.x > vectors[1].x and vector.y < vectors[1].y then
+                vector.direction = {}
+                vector.direction[1] = "EoN"
+                vector.direction[2] = "NoE"
+                vector.angle = {}
+                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * (180 / pi)
+                vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
+
+            elseif vector.x > vectors[1].x and vector.y > vectors[1].y then
+                vector.direction = {}
+                vector.direction[1] = "EoS"
+                vector.direction[2] = "SoE"
+                vector.angle = {}
+                vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * (180 / pi)
+                vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
+        
             end
         end
     end
@@ -113,14 +112,14 @@ function love.draw()
         if i ~= #vectors then
             love.graphics.print(vector.angle * 180 / pi.."°,"..vector.direction, vector.x + 25,vector.y - 15)
             love.graphics.print(vector.name, vector.x + 5,vector.y - 15)
-            love.graphics.circle("fill",vector.tx,vector.ty,3)
+            love.graphics.circle("line",vector.tx,vector.ty,1)
             love.graphics.line(vector.x,vector.y,vector.tx , vector.ty)
 
         elseif i== #vectors and getResultant == true then
             love.graphics.print(math.floor(vector.angle[1]).."°,"..vector.direction[1], vector.x + 20,vector.y - 15)
             love.graphics.print(math.floor(vector.angle[2]).."°,"..vector.direction[2], vector.x + 100,vector.y - 15)
             love.graphics.print(vector.name, vector.x + 5,vector.y - 15)
-            love.graphics.circle("fill",vector.tx,vector.ty,3)
+            love.graphics.circle("line",vector.tx,vector.ty,1)
             love.graphics.line(vector.x,vector.y,vector.tx , vector.ty)
             love.graphics.print(vector.name.." = length:"..vector.length..", angle:"..math.floor(vector.angle[1]).."°,"..vector.direction[1].."; "..math.floor(vector.angle[2]).."°,"..vector.direction[2], ww - 300,wh - 120)
             
