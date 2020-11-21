@@ -1,9 +1,9 @@
-vectors = require "vectors"
-
 function love.load()
+    -- startz
+    vectors = require "vectors"
     startingX, startingY = 450,430
 
-    convertLen = 30 --len to px for scaling
+    convertLen = 20 --len to px for scaling
     converAngle = 180 -- degree to radians
     pi = math.pi
     getResultant = true
@@ -99,12 +99,12 @@ function love.load()
                 vector.angle = {}
                 vector.angle[1] = math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * (180 / pi)
                 vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
-        
             end
         end
     end
 
     ww, wh = love.graphics.getDimensions()
+    graphCanvas = love.graphics.newCanvas()
 end
 
 function love.draw()
@@ -126,3 +126,4 @@ function love.draw()
         end
     end
 end
+

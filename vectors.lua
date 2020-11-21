@@ -1,4 +1,6 @@
-    --[[
+ -- vectors
+
+        --[[
         to add vectors
         {
             name = "name of vector",
@@ -23,46 +25,46 @@
         "WoS" ..
     ]]
 
-return {
+    return {
 
-    {
-        name = "d1",
-        length = 6, 
-        angle = 0, 
-        direction = "W"
-    },
-        
-    {
-        name = "d2",
-        length = 7, 
-        angle = 40, 
-        direction = "SoW"
-    },
-
-    {
-        name = "d3",
-        length = 9, 
-        angle = 0,
-        direction = "N"
-    },
-
-    {
-        name = "d4",
-        length = 4, 
-        angle = 30, 
-        direction = "SoW"
-    },
-
-    {
-        name = "d5",
-        length = 8, 
-        angle = 70,
-        direction = "NoE"
-    },
-
-    -- dont remove. this is your resultant vector.
-    {
-        name = "R",
+        {
+            name = "d1",
+            length = 6, 
+            angle = 0, 
+            direction = "W"
+        },
+            
+        {
+            name = "d2",
+            length = 7, 
+            angle = 40, 
+            direction = "SoW"
+        },
+    
+        {
+            name = "d3",
+            length = 9, 
+            angle = 0,
+            direction = "N"
+        },
+    
+        {
+            name = "d4",
+            length = 4, 
+            angle = 30, 
+            direction = "SoW"
+        },
+    
+        {
+            name = "d5",
+            length = 8, 
+            angle = 70,
+            direction = "NoE"
+        },
+    
+        -- dont remove. this is your resultant vector.
+        {
+            name = "R",
+        }
+    
     }
-
-}
