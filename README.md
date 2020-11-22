@@ -10,7 +10,7 @@ then drag the folder into love2d.exe </br>
 change the values in the vector.lua then save then run.
 
 Snaps:
-Component Method:
+</br>Component Method:</br>
 ![Component Method](https://github.com/nopan-studio/PhysicsVectorHTT/blob/main/screenshots/component.png)
 
 </br>Graphical Method:</br>
