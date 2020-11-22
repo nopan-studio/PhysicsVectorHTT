@@ -78,10 +78,10 @@ function htt:load()
 
             elseif vector.x < vectors[1].x and vector.y < vectors[1].y then
                 vector.direction = {}
-                vector.direction[1] = "WoN"
-                vector.direction[2] = "NoW"
+                vector.direction[1] = "NoW"
+                vector.direction[2] = "WoN"
                 vector.angle = {}
-                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi ) 
+                vector.angle[1] = math.abs(math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi )
                 vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
 
             elseif vector.x < vectors[1].x and vector.y > vectors[1].y then
@@ -89,15 +89,17 @@ function htt:load()
                 vector.direction[1] = "WoS"
                 vector.direction[2] = "SoW"
                 vector.angle = {}
-                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi ) 
+                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi )
                 vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
             
             elseif vector.x > vectors[1].x and vector.y < vectors[1].y then
                 vector.direction = {}
-                vector.direction[1] = "NoE"
-                vector.direction[2] = "EoN"
+                vector.direction[1] = "EoN"
+                vector.direction[2] = "NoE"
                 vector.angle = {}
-                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi ) 
+                
+                
+                vector.angle[1] = math.abs(math.atan2(vectors[1].y - vector.y, vectors[1].x - vector.x) * 180 / pi )
                 vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
 
             elseif vector.x > vectors[1].x and vector.y > vectors[1].y then
@@ -105,7 +107,8 @@ function htt:load()
                 vector.direction[1] = "SoE"
                 vector.direction[2] = "EoS"
                 vector.angle = {}
-                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi ) 
+               
+                vector.angle[1] = math.abs(math.atan2(vector.y - vectors[1].y, vector.x - vectors[1].x) * 180 / pi )
                 vector.angle[2] = math.abs(90 - vector.angle[1]) + 1
             end
         end

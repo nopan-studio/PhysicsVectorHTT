@@ -29,7 +29,7 @@ function cm:getY(vector)
 
      if vector.direction == "S" or 
          vector.direction == "EoS" or 
-            vector.direction == "SoW" or 
+            vector.direction == "SoE" or 
                 vector.direction == "WoS" or 
                     vector.direction == "SoW" then
                     ret = ret * -1
