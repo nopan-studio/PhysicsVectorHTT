@@ -28,38 +28,38 @@
     return {
 
         {
-            name = "d1",
+            name = "V1",
             length = 6, 
             angle = 0, 
-            direction = "W"
+            direction = "E"
         },
             
         {
-            name = "d2",
+            name = "V2",
             length = 7, 
             angle = 40, 
-            direction = "SoW"
+            direction = "NoE"
         },
     
         {
-            name = "d3",
+            name = "V3",
             length = 9, 
-            angle = 0,
-            direction = "N"
+            angle = 90,
+            direction = "S"
         },
     
         {
-            name = "d4",
+            name = "V4",
             length = 4, 
             angle = 30, 
-            direction = "SoW"
+            direction = "NoW"
         },
     
         {
-            name = "d5",
+            name = "V5",
             length = 8, 
             angle = 70,
-            direction = "NoE"
+            direction = "SoW"
         },
     
         -- dont remove. this is your resultant vector.
