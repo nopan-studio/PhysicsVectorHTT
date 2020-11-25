@@ -1,10 +1,11 @@
 simp = require "libs.Simply"
+push = require "libs.push"
 --
 require "htt"
 require "cm"
-hey = require "vectors"
+require "vectors"
 
-local mode = "CM"
+local mode = "HTT"
 
 function deepcopy(orig)
     local orig_type = type(orig)
@@ -22,12 +23,19 @@ function deepcopy(orig)
 end
 
 function love.load()
-    vectors = deepcopy(hey)
+    love.graphics.setDefaultFilter("linear","linear",2)
+
+    vectors = deepcopy(require "vectors")
 
     love.window.setMode( 800, 600, {minwidth=800,minheight=600})
 
     font = love.graphics.newFont("Asana-Math.otf",15)
     love.graphics.setFont(font)
+
+    sw, sh = 800, 600
+    local windowWidth, windowHeight = 800,600--love.window.getDesktopDimensions()
+
+    push:setupScreen(sw, sh, windowWidth, windowHeight, {fullscreen = false, stretched = true, pixelperfect = true})
 
     simp.load()
 
@@ -73,22 +81,23 @@ function love.mousepressed(x,y,button)
 end
 
 function love.update(dt)
-    htt:update(dt)
+    if mode == "CM" then
+        cm:update(dt)
+    elseif mode == "HTT" then
+        htt:update(dt)
+    end
     simp.update()
 end
 
-function love.draw()
-    
-
-    love.graphics.setColor(1,1,1)
-    if mode == "menu" then
-
-    elseif mode == "CM" then
-        cm:draw()
-    elseif mode == "HTT" then
-        htt:draw()
-    end
-    simp.draw()
-
+function love.draw()  
+    push:start()
+        love.graphics.setColor(1,1,1)
+        if mode == "CM" then
+            cm:draw()
+        elseif mode == "HTT" then
+            htt:draw()
+        end
+        simp.draw()
+    push:finish()
 end
 

@@ -1,6 +1,6 @@
  -- vectors
 
-        --[[
+    --[[
         to add vectors
         {
             name = "name of vector",
@@ -9,6 +9,7 @@
             direction = check table below for directions,
         }
     ]]
+
     --[[
         DIRECTIONS
         "N" = north
@@ -28,43 +29,42 @@
     return {
 
         {
-            name = "V1",
+            name = "d1",
             length = 6, 
             angle = 0, 
-            direction = "E"
+            direction = "W"
         },
             
         {
-            name = "V2",
+            name = "d2",
             length = 7, 
             angle = 40, 
-            direction = "NoE"
-        },
-    
-        {
-            name = "V3",
-            length = 9, 
-            angle = 90,
-            direction = "S"
-        },
-    
-        {
-            name = "V4",
-            length = 4, 
-            angle = 30, 
-            direction = "NoW"
-        },
-    
-        {
-            name = "V5",
-            length = 8, 
-            angle = 70,
             direction = "SoW"
         },
     
+        {
+            name = "d3",
+            length = 9, 
+            angle = 90,
+            direction = "N"
+        },
+    
+        {
+            name = "d4",
+            length = 4, 
+            angle = 30, 
+            direction = "SoE"
+        },
+        
+        {
+            name = "d5",
+            length = 8, 
+            angle = 70,
+            direction = "NoE"
+        },
+
         -- dont remove. this is your resultant vector.
         {
             name = "R",
         }
-    
     }
