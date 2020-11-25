@@ -32,35 +32,35 @@
             name = "d1",
             length = 6, 
             angle = 0, 
-            direction = "W"
+            direction = "E"
         },
             
         {
             name = "d2",
             length = 7, 
             angle = 40, 
-            direction = "SoW"
+            direction = "SoE"
         },
     
         {
             name = "d3",
             length = 9, 
             angle = 90,
-            direction = "N"
+            direction = "S"
         },
     
         {
             name = "d4",
             length = 4, 
             angle = 30, 
-            direction = "SoE"
+            direction = "NoW"
         },
         
         {
             name = "d5",
             length = 8, 
             angle = 70,
-            direction = "NoE"
+            direction = "SoW"
         },
 
         -- dont remove. this is your resultant vector.

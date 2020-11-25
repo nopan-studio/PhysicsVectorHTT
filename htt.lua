@@ -247,23 +247,6 @@ function htt:drawVector(vector)
     local dir = vector.direction
     local angle = vector.angle
 
-    if dir == "S" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, 2 * math.cos(angle), vector.ty-6, vector.tx - 6, vector.ty-6)
-    elseif dir == "N" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx + 6, vector.ty+6, vector.tx - 6, vector.ty+6)
-    elseif dir == "W" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx + 6, vector.ty-6, vector.tx + 6, vector.ty+6)
-    elseif dir == "E" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx - 6, vector.ty-6, vector.tx - 6, vector.ty+6)
-    elseif dir == "WoS" or dir == "SoW" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx , vector.ty-6, vector.tx + 6, vector.ty)
-    elseif dir == "EoS" or dir == "SoE" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx-6 , vector.ty, vector.tx, vector.ty-6)
-    elseif dir == "EoN" or dir == "NoE" then
-        love.graphics.polygon("fill",vector.tx , vector.ty, vector.tx-6 , vector.ty-6, vector.tx-6, vector.ty+6)
-    end
-    
-
 end
 
 function htt:round(number, precision)
